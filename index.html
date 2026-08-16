@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PressmateOS — Global Operating System for Fabric Care</title>
+<meta name="description" content="PressmateOS is the complete operating system for dry cleaners and laundry businesses — Customer App, Driver App, POS Billing, Inventory, CRM & Analytics on a single platform.">
+<meta name="keywords" content="laundry management software, dry cleaning software India, laundry POS billing, laundry delivery app, fabric care ERP, PressmateOS">
+<link rel="canonical" href="https://pressmateos.com/">
+
+<!-- Open Graph / WhatsApp Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="PressmateOS — Global Operating System for Fabric Care">
+<meta property="og:description" content="Customer App, Delivery App, POS Billing & Smart Dashboards for Dry Cleaners and Laundromats.">
+<meta property="og:image" content="https://pressmateos.com/og-image.png">
+
+<!-- Favicon with Orbiting Brand Mark -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23082062'/%3E%3Ctext x='16' y='65' font-family='sans-serif' font-weight='900' font-size='38' fill='%23F45B1E'%3EOS%3C/text%3E%3Ccircle cx='68' cy='30' r='5' fill='%23F45B1E'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #082062;
+  --navy-dark: #051442;
+  --navy-deep: #030a21;
+  --navy-surface: #0a1740;
+  --orange: #F45B1E;
+  --orange-hover: #DE4C13;
+  --orange-light: #FFF0EB;
+  --ink: #EAEFFC;
+  --gray: #8F9EC4;
+  --line: #18285C;
+  --disp: 'Plus Jakarta Sans', sans-serif;
+  --body: 'Inter', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--body); color:var(--ink); background:var(--navy-deep); overflow-x:hidden; }
+@media (min-width: 1181px) { body { margin-right: 230px; } }
+a { text-decoration:none; color:inherit; }
+.wrap { max-width:1240px; margin:0 auto; padding:0 32px; }
+@media (max-width:640px) { .wrap { padding:0 18px; } }
+
+.ic { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* SVG Brand Logo */
+.logo-container { display:inline-flex; align-items:center; cursor:pointer; }
+.logo-svg { height:40px; width:auto; display:block; }
+.logo-svg-sm { height:28px; width:auto; }
+
+/* Global Animations & Transitions */
+a, button { transition:all .25s cubic-bezier(.4,0,.2,1); }
+::selection { background:var(--orange); color:#fff; }
+
+.rv { opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.rv.in { opacity:1; transform:translateY(0); }
+.rv-stagger > * { opacity:0; transform:translateY(16px); transition:opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1); }
+.rv-stagger.in > * { opacity:1; transform:translateY(0); }
+
+/* Navigation */
+nav { border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(3,10,33,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); z-index:100; }
+@media (min-width: 1181px) {
+  nav::after { content:''; position:fixed; top:0; right:0; width:240px; height:76px; background:rgba(3,10,33,0.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); z-index:59; pointer-events:none; }
+}
+nav .wrap { display:flex; align-items:center; justify-content:space-between; height:76px; }
+.nlinks { display:flex; gap:30px; font-weight:600; font-size:0.95rem; color:var(--ink); }
+.nlinks a { position:relative; padding:4px 0; }
+.nlinks a::after { content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--orange); transition:width .25s ease; }
+.nlinks a:hover::after, .nlinks a.active::after { width:100%; }
+.nlinks a.active { color:var(--orange); }
+@media (max-width:890px) { .nlinks { display:none; } }
+
+.demo-btn { background:var(--orange); color:#fff; padding:12px 24px; border-radius:10px; font-weight:700; font-size:0.92rem; box-shadow:0 8px 20px -6px rgba(244,91,30,0.6); display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+.demo-btn:hover { background:var(--orange-hover); transform:translateY(-2px); box-shadow:0 12px 24px -6px rgba(244,91,30,0.7); }
+.navwrap { display:flex; align-items:center; gap:14px; }
+.hamburger { display:none; width:40px; height:40px; border-radius:9px; border:1px solid var(--line); background:var(--navy-surface); align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+.hamburger span { width:18px; height:2px; background:var(--ink); border-radius:2px; transition:all .25s ease; }
+@media (max-width:890px) { .hamburger { display:flex; } }
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+.mnav { display:none; flex-direction:column; background:var(--navy-surface); border-bottom:1px solid var(--line); overflow:hidden; max-height:0; transition:max-height .35s ease; }
+.mnav.open { max-height:360px; }
+@media (max-width:890px) { .mnav { display:flex; } }
+.mnav a { padding:16px 24px; font-weight:600; border-top:1px solid var(--line); color:var(--ink); }
+
+/* HERO SECTION */
+.hero { background:radial-gradient(100% 90% at 90% 10%, #0d276b 0%, var(--navy-deep) 60%); padding:60px 0 30px; position:relative; }
+.hero .wrap { display:grid; grid-template-columns:1.05fr 0.95fr; gap:32px; align-items:center; }
+@media (max-width:960px) { .hero .wrap { grid-template-columns:1fr; } }
+.chip { display:inline-flex; align-items:center; gap:6px; border:1.5px solid var(--orange); color:var(--orange); font-weight:700; font-size:0.8rem; padding:6px 14px; border-radius:100px; margin-bottom:20px; background:rgba(244,91,30,0.1); }
+h1.htitle { font-family:var(--disp); font-weight:900; font-size:clamp(2.2rem, 4.2vw, 3.4rem); line-height:1.1; letter-spacing:-0.02em; color:#fff; }
+h1.htitle .hl { color:var(--orange); }
+.hsub { color:var(--gray); font-size:1.1rem; margin-top:20px; max-width:480px; line-height:1.6; }
+.hero-cta { display:inline-flex; align-items:center; gap:10px; background:var(--orange); color:#fff; font-weight:700; padding:16px 30px; border-radius:10px; margin-top:28px; font-size:1.02rem; box-shadow:0 12px 24px -8px rgba(244,91,30,0.6); }
+.hero-cta:hover { background:var(--orange-hover); transform:translateY(-2px); box-shadow:0 16px 32px -8px rgba(244,91,30,0.75); }
+.hero-cta .arrow { transition:transform .25s ease; }
+.hero-cta:hover .arrow { transform:translateX(5px); }
+
+.trust-row { display:flex; gap:20px; flex-wrap:wrap; margin-top:36px; }
+.trust-item { display:flex; align-items:center; gap:8px; font-size:0.88rem; font-weight:600; color:var(--ink); }
+.trust-item .dot { width:28px; height:28px; border-radius:8px; background:var(--navy-surface); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--orange); }
+.trust-item .dot svg { width:15px; height:15px; }
+
+/* HERO VISUAL MOCKUP */
+.hvisual { position:relative; height:500px; }
+@media (max-width:960px) { .hvisual { height:420px; margin-top:20px; } }
+.hv-laptop { position:absolute; top:10px; right:0; width:86%; animation:float1 7s ease-in-out infinite; }
+@media (max-width:960px) { .hv-laptop { left:50%; transform:translateX(-50%); width:96%; } }
+.hv-screen { background:var(--navy-dark); border:1px solid var(--line); border-radius:14px 14px 4px 4px; padding:10px; box-shadow:0 40px 80px -20px rgba(0,0,0,0.7); }
+.hv-topbar { display:flex; align-items:center; justify-content:space-between; padding:4px 8px 10px; }
+.hv-dots { display:flex; gap:5px; }
+.hv-dots span { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.2); }
+.hv-body { background:var(--navy-surface); border-radius:10px; display:grid; grid-template-columns:84px 1fr; overflow:hidden; min-height:290px; }
+.hv-side { background:#071233; padding:12px 8px; display:flex; flex-direction:column; gap:4px; }
+.hv-side-item { display:flex; align-items:center; gap:6px; padding:6px; border-radius:6px; color:#8F9EC4; font-size:0.52rem; font-weight:700; }
+.hv-side-item.active { background:var(--orange); color:#fff; }
+.hv-main { padding:14px; }
+.hv-kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px; }
+.hv-kpi { background:#071233; border:1px solid var(--line); border-radius:8px; padding:8px; }
+.hv-kpi b { display:block; font-family:var(--disp); font-size:0.92rem; color:#fff; }
+.hv-kpi span { font-size:0.55rem; color:var(--gray); font-weight:700; }
+.hv-kpi em { color:#22C55E; font-style:normal; font-size:0.5rem; margin-left:3px; }
+.hv-charts { display:grid; grid-template-columns:1.4fr 1fr; gap:8px; }
+.hv-card { background:#071233; border:1px solid var(--line); border-radius:8px; padding:9px; }
+.hv-card .hv-clabel { font-size:0.56rem; font-weight:800; color:#fff; margin-bottom:6px; }
+.hv-laptop-base { height:14px; background:linear-gradient(180deg, #18285C, #09122C); border-radius:0 0 10px 10px; margin:0 -6px; }
+
+.hv-phone { position:absolute; width:150px; background:var(--navy-dark); border:1px solid var(--line); border-radius:24px; padding:8px; box-shadow:0 24px 50px -10px rgba(0,0,0,0.8); z-index:3; }
+.hv-phone.left { left:-4%; bottom:2%; animation:float2 6s ease-in-out infinite; }
+.hv-phone.right { right:-2%; bottom:-6%; width:140px; animation:float3 8s ease-in-out infinite; }
+@media (max-width:960px) { .hv-phone { display:none; } }
+.hv-phone-screen { background:var(--navy-surface); border-radius:18px; overflow:hidden; min-height:220px; padding-bottom:8px; }
+.hv-phone-head { background:#071233; padding:10px; color:#fff; font-size:0.68rem; font-weight:700; font-family:var(--disp); }
+.app-quick-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:8px; }
+.app-qtile { background:#071233; border-radius:7px; padding:6px 4px; text-align:center; }
+.app-qtile .ic { width:13px; height:13px; color:var(--orange); margin:0 auto 2px; }
+.app-qtile span { font-size:0.45rem; font-weight:700; color:#fff; display:block; }
+.app-offer { margin:4px 8px; background:linear-gradient(135deg, var(--orange), #E04000); border-radius:8px; padding:8px; color:#fff; }
+.app-offer b { font-size:0.6rem; display:block; font-family:var(--disp); }
+.app-offer span { font-size:0.45rem; opacity:0.9; }
+
+@keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes float2 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+@keyframes float3 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+
+/* LIVE TICKER - FIXED SIDEBAR */
+.tk-fixed { position:fixed; top:0; right:0; height:100vh; width:224px; z-index:60; padding:82px 18px 18px; box-sizing:border-box; }
+.tk-viewport { position:relative; height:calc(100% - 90px); overflow:hidden; border-radius:18px; background:var(--navy-surface); border:1.5px solid var(--line); }
+.tk-mask { position:absolute; inset:0; -webkit-mask-image:linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent); mask-image:linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent); }
+.tk-track { position:absolute; left:0; right:0; top:0; display:flex; flex-direction:column; gap:8px; padding:12px; animation:tickerDown 28s linear infinite; }
+.tk-viewport:hover .tk-track { animation-play-state:paused; }
+@keyframes tickerDown { 0%{transform:translateY(-50%);} 100%{transform:translateY(0);} }
+.tk-card { background:#071233; border:1px solid var(--line); border-radius:12px; padding:12px; }
+.tk-top { display:flex; align-items:center; gap:6px; margin-bottom:6px; }
+.tk-dot { width:7px; height:7px; border-radius:50%; background:var(--orange); }
+.tk-code { font-size:0.65rem; font-weight:700; color:var(--orange); }
+.tk-title { font-family:var(--disp); font-weight:700; font-size:0.86rem; color:#fff; margin-bottom:8px; }
+.tk-barcode { height:16px; border-radius:2px; opacity:0.75; background-image:repeating-linear-gradient(90deg, #8F9EC4 0px, #8F9EC4 2px, transparent 2px, transparent 4px, #8F9EC4 4px, #8F9EC4 6px, transparent 6px, transparent 8px); }
+@media (max-width:1180px) { .tk-fixed { display:none; } }
+
+/* SECTION COMMON STYLES */
+section { padding:80px 0; }
+.shead { text-align:center; max-width:680px; margin:0 auto 46px; }
+.eyebrow { font-weight:800; color:var(--orange); font-size:0.86rem; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px; }
+h2 { font-family:var(--disp); font-weight:800; font-size:clamp(1.7rem,3vw,2.3rem); color:#fff; letter-spacing:-0.01em; }
+h2 .hl { color:var(--orange); }
+
+/* FEATURE GRID */
+.fgrid-card { background:var(--navy-surface); border:1px solid var(--line); border-radius:24px; padding:36px; }
+.fgrid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+@media (max-width:1024px) { .fgrid { grid-template-columns:repeat(3,1fr); } }
+@media (max-width:640px) { .fgrid { grid-template-columns:repeat(2,1fr); } }
+.fitem { background:#071233; border:1px solid var(--line); border-radius:12px; padding:16px 14px; display:flex; align-items:center; gap:12px; transition:all .25s ease; }
+.fitem:hover { transform:translateY(-4px); border-color:var(--orange); box-shadow:0 12px 24px -10px rgba(244,91,30,0.3); }
+.fitem .ficon { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; background:rgba(244,91,30,0.12); color:var(--orange); }
+.fitem .flabel { font-size:0.82rem; font-weight:700; color:#fff; line-height:1.3; }
+
+/* PRICING */
+.pricing-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:16px; }
+@media (max-width:1040px) { .pricing-grid { grid-template-columns:repeat(2, 1fr); } }
+@media (max-width:580px) { .pricing-grid { grid-template-columns:1fr; } }
+.price-card { background:var(--navy-surface); border:1px solid var(--line); border-radius:18px; padding:28px 20px; text-align:center; position:relative; transition:all .3s ease; display:flex; flex-direction:column; justify-content:space-between; }
+.price-card:hover { transform:translateY(-6px); border-color:var(--orange); }
+.price-card.featured { border:2px solid var(--orange); background:linear-gradient(180deg, #0f235e 0%, var(--navy-surface) 100%); transform:translateY(-8px); box-shadow:0 24px 44px -16px rgba(244,91,30,0.3); }
+.pc-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--orange); color:#fff; font-size:0.7rem; font-weight:800; padding:4px 14px; border-radius:100px; text-transform:uppercase; letter-spacing:0.04em; }
+.pc-name { font-family:var(--disp); font-weight:800; font-size:1.15rem; color:#fff; }
+.pc-price { font-family:var(--disp); font-weight:900; font-size:1.65rem; color:var(--orange); margin-top:12px; }
+.pc-price span { font-size:0.75rem; color:var(--gray); font-weight:600; }
+.pc-suit { font-size:0.84rem; color:var(--gray); font-weight:600; margin:10px 0 20px; min-height:40px; line-height:1.4; }
+.pc-btn { display:block; background:var(--orange); color:#fff; font-weight:700; font-size:0.88rem; padding:12px; border-radius:9px; }
+.pc-btn:hover { background:var(--orange-hover); }
+
+/* HARDWARE */
+.hw-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media (max-width:860px) { .hw-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:480px) { .hw-grid { grid-template-columns:1fr; } }
+.hw-card { background:var(--navy-surface); border:1px solid var(--line); border-radius:16px; padding:26px 20px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; transition:all .25s ease; }
+.hw-card:hover { transform:translateY(-5px); border-color:var(--orange); }
+.hw-icon { width:52px; height:52px; border-radius:14px; background:#071233; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--orange); }
+.hw-name { font-family:var(--disp); font-weight:700; color:#fff; font-size:0.95rem; }
+
+/* MANPOWER ACADEMY */
+.manpower-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+@media (max-width:760px) { .manpower-grid { grid-template-columns:1fr; } }
+.mp-card { background:var(--navy-surface); border:1px solid var(--line); border-radius:20px; padding:36px 30px; transition:all .3s ease; }
+.mp-card:hover { transform:translateY(-5px); border-color:var(--orange); }
+.mp-icon { width:52px; height:52px; border-radius:14px; background:#071233; color:var(--orange); display:flex; align-items:center; justify-content:center; margin-bottom:18px; border:1px solid var(--line); }
+.mp-card h3 { font-family:var(--disp); font-weight:800; color:#fff; font-size:1.35rem; }
+.mp-card p { color:var(--gray); font-size:0.95rem; margin-top:12px; line-height:1.65; }
+.mp-btn { display:inline-block; margin-top:22px; background:var(--orange); color:#fff; font-weight:700; font-size:0.9rem; padding:12px 24px; border-radius:9px; }
+
+/* CALL TO ACTION */
+.cta-final { background:linear-gradient(135deg, #091c52 0%, #152d73 100%); border:1px solid var(--line); border-radius:24px; padding:56px 44px; display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap; }
+.cta-final h2 { max-width:540px; }
+.cta-final p { color:var(--gray); margin-top:10px; max-width:460px; font-size:1.02rem; }
+
+/* FOOTER */
+footer { background:#ffffff; color:#3b476b; border-top:4px solid var(--orange); margin-top:40px; }
+footer .fwrap { max-width:1240px; margin:0 auto; padding:64px 32px 0; }
+.ftop { display:grid; grid-template-columns:1.5fr 1fr 1fr 1.3fr; gap:40px; padding-bottom:48px; }
+@media (max-width:860px) { .ftop { grid-template-columns:1fr 1fr; } }
+@media (max-width:520px) { .ftop { grid-template-columns:1fr; } }
+.fabout { color:#62719a; font-size:0.88rem; line-height:1.65; margin-top:16px; max-width:300px; }
+.fcol h5 { font-family:var(--disp); font-weight:800; font-size:0.9rem; color:#082062; text-transform:uppercase; margin-bottom:18px; letter-spacing:0.04em; }
+.fcol ul { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.fcol a { color:#55648f; font-size:0.9rem; font-weight:600; }
+.fcol a:hover { color:var(--orange); }
+.fcta-box { background:var(--navy); border-radius:16px; padding:24px; color:#fff; }
+.fcta-box p { font-family:var(--disp); font-weight:800; font-size:1.05rem; }
+.fcta-box span { font-size:0.8rem; color:#9cb1e6; display:block; margin:6px 0 16px; }
+.fbottom { border-top:1px solid #e2e8f5; padding:24px 0 32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:0.85rem; color:#7886ad; }
+.fbottom b { color:#082062; }
+</style>
+</head>
+<body>
+
+<!-- SVG SYMBOLS POOL -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></symbol>
+<symbol id="i-dollar" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-bar" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+<symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></symbol>
+<symbol id="i-wind" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+</defs>
+</svg>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="wrap">
+    <a href="#hero" class="logo-container" aria-label="PressmateOS Home">
+      <!-- High Fidelity SVG Logo reproducing your attached asset -->
+      <svg class="logo-svg" viewBox="0 0 460 110" xmlns="http://www.w3.org/2000/svg">
+        <text x="5" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#FFFFFF" letter-spacing="-1.5">Pressmate</text>
+        <text x="338" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#F45B1E" letter-spacing="-1.5">OS</text>
+        <!-- Orbital Arcs on OS -->
+        <path d="M 370 18 A 38 38 0 0 1 428 20" fill="none" stroke="#F45B1E" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="431" cy="22" r="5" fill="#F45B1E"/>
+        <path d="M 432 78 A 38 38 0 0 1 372 78" fill="none" stroke="#F45B1E" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="433" cy="74" r="5" fill="#F45B1E"/>
+        <!-- Tagline underline & text -->
+        <line x1="28" y1="96" x2="72" y2="96" stroke="#F45B1E" stroke-width="3" stroke-linecap="round"/>
+        <text x="84" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#8F9EC4" letter-spacing="0.8">Global Operating System for Fabric Care</text>
+        <line x1="392" y1="96" x2="436" y2="96" stroke="#F45B1E" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </a>
+
+    <div class="nlinks">
+      <a href="#hero">Home</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#manpower">Academy</a>
+    </div>
+
+    <div class="navwrap">
+      <a class="demo-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20of%20PressmateOS" target="_blank" rel="noopener">Book Free Demo</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="mnav" id="mnav">
+    <a href="#hero">Home</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#manpower">Academy</a>
+  </div>
+</nav>
+
+<!-- FIXED LIVE TICKER (DESKTOP) -->
+<div class="tk-fixed">
+  <div class="tk-viewport rv">
+    <div class="tk-mask">
+      <div class="tk-track" id="tkTrack"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <span class="chip">✦ Complete Dry Cleaning &amp; Laundry Suite</span>
+      <h1 class="htitle">The Operating System for <span class="hl">Fabric Care</span> Businesses</h1>
+      <p class="hsub">Empower your laundry &amp; dry cleaning business with our modern Customer App, Delivery App, POS Billing &amp; Multi-Branch Admin Panel.</p>
+      
+      <a class="hero-cta" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20of%20PressmateOS" target="_blank" rel="noopener">
+        Book Free 30-Min Demo <span class="arrow">→</span>
+      </a>
+
+      <div class="trust-row">
+        <div class="trust-item"><span class="dot"><svg class="ic"><use href="#i-cloud"/></svg></span>Cloud Based</div>
+        <div class="trust-item"><span class="dot"><svg class="ic"><use href="#i-shield"/></svg></span>Secure &amp; Reliable</div>
+        <div class="trust-item"><span class="dot"><svg class="ic"><use href="#i-check"/></svg></span>Zero Downtime</div>
+        <div class="trust-item"><span class="dot"><svg class="ic"><use href="#i-headphones"/></svg></span>24/7 Support</div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL -->
+    <div class="hvisual">
+      <div class="hv-laptop">
+        <div class="hv-screen">
+          <div class="hv-topbar">
+            <!-- Mini Logo -->
+            <svg class="logo-svg-sm" viewBox="0 0 460 110" xmlns="http://www.w3.org/2000/svg">
+              <text x="5" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#FFFFFF">Pressmate</text>
+              <text x="338" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#F45B1E">OS</text>
+            </svg>
+            <div class="hv-dots"><span></span><span></span><span></span></div>
+          </div>
+          <div class="hv-body">
+            <div class="hv-side">
+              <div class="hv-side-item active">Dashboard</div>
+              <div class="hv-side-item">Orders</div>
+              <div class="hv-side-item">Garment Tag</div>
+              <div class="hv-side-item">Customers</div>
+              <div class="hv-side-item">Driver Fleet</div>
+            </div>
+            <div class="hv-main">
+              <div class="hv-kpis">
+                <div class="hv-kpi"><b>148</b><span>ORDERS <em>+14%</em></span></div>
+                <div class="hv-kpi"><b>₹54.2K</b><span>SALES <em>+11%</em></span></div>
+                <div class="hv-kpi"><b>1,420</b><span>CUSTOMERS</span></div>
+                <div class="hv-kpi"><b>32</b><span>PROCESSING</span></div>
+              </div>
+              <div class="hv-charts">
+                <div class="hv-card">
+                  <div class="hv-clabel">Weekly Orders Flow</div>
+                  <svg viewBox="0 0 160 55" width="100%" height="45"><polyline points="0,40 25,25 50,32 75,15 100,24 125,8 150,18" fill="none" stroke="#F45B1E" stroke-width="3" stroke-linecap="round"/></svg>
+                </div>
+                <div class="hv-card">
+                  <div class="hv-clabel">Service Split</div>
+                  <div style="font-size:0.6rem; color:#8F9EC4; line-height:1.6; margin-top:4px;">
+                    Dry Cleaning: <b>62%</b><br>
+                    Wash &amp; Fold: <b>24%</b><br>
+                    Steam Iron: <b>14%</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hv-laptop-base"></div>
+      </div>
+
+      <!-- Customer App Mockup -->
+      <div class="hv-phone left">
+        <div class="hv-phone-screen">
+          <div class="hv-phone-head">Pressmate Customer</div>
+          <div class="app-quick-grid">
+            <div class="app-qtile"><svg class="ic"><use href="#i-calendar"/></svg><span>Book Pickup</span></div>
+            <div class="app-qtile"><svg class="ic"><use href="#i-pin"/></svg><span>Live Track</span></div>
+            <div class="app-qtile"><svg class="ic"><use href="#i-file"/></svg><span>Invoices</span></div>
+            <div class="app-qtile"><svg class="ic"><use href="#i-gift"/></svg><span>Offers</span></div>
+          </div>
+          <div class="app-offer">
+            <b>Express 24H Delivery</b>
+            <span>Schedule pickup with 1-tap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Driver App Mockup -->
+      <div class="hv-phone right">
+        <div class="hv-phone-screen">
+          <div class="hv-phone-head" style="background:#082062;">Delivery Executive</div>
+          <div style="padding:10px 8px; font-size:0.6rem; color:#fff;">
+            <b>Assigned Pickups: 6</b>
+            <div style="margin-top:6px; background:#071233; padding:6px; border-radius:6px; border:1px solid var(--line);">
+              Order #2041 (Sector 14)<br>
+              <span style="color:#22C55E;">Ready for Pickup</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURES SUITE -->
+<section id="features">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Enterprise Feature Suite</span>
+      <h2>Everything You Need to Run Your <span class="hl">Store &amp; Factory</span></h2>
+    </div>
+
+    <div class="fgrid-card rv">
+      <div class="fgrid" id="featureGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Transparent Plans</span>
+      <h2>Flexible Pricing for <span class="hl">Every Laundry Scale</span></h2>
+    </div>
+
+    <div class="pricing-grid rv-stagger">
+      <div class="price-card">
+        <div>
+          <div class="pc-name">Basic</div>
+          <div class="pc-price">₹2,499<span>/year</span></div>
+          <div class="pc-suit">Ideal for single small dry cleaning / iron shops.</div>
+        </div>
+        <a class="pc-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20inquire%20about%20the%20Basic%20Plan%20(Rs%202499%2Fyr)" target="_blank" rel="noopener">Choose Plan</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="pc-name">Standard</div>
+          <div class="pc-price">₹9,999<span>/year</span></div>
+          <div class="pc-suit">For standalone modern laundry stores.</div>
+        </div>
+        <a class="pc-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20inquire%20about%20the%20Standard%20Plan%20(Rs%209999%2Fyr)" target="_blank" rel="noopener">Choose Plan</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="pc-badge">Most Popular</div>
+        <div>
+          <div class="pc-name">Pro</div>
+          <div class="pc-price">₹25,000<span>/year</span></div>
+          <div class="pc-suit">Includes Customer App, Driver App &amp; GST POS.</div>
+        </div>
+        <a class="pc-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20inquire%20about%20the%20Pro%20Plan%20(Rs%2025000%2Fyr)" target="_blank" rel="noopener">Choose Plan</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="pc-name">Business</div>
+          <div class="pc-price">₹50,000<span>/year</span></div>
+          <div class="pc-suit">Multi-store chains with centralized workshop backend.</div>
+        </div>
+        <a class="pc-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20inquire%20about%20the%20Business%20Plan%20(Rs%2050000%2Fyr)" target="_blank" rel="noopener">Choose Plan</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="pc-name">Enterprise</div>
+          <div class="pc-price">Custom</div>
+          <div class="pc-suit">Franchise networks &amp; white-label laundry brands.</div>
+        </div>
+        <a class="pc-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20inquire%20about%20the%20Enterprise%20White-Label%20Plan" target="_blank" rel="noopener">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE SUPPORT -->
+<section id="hardware">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Hardware Ecosystem</span>
+      <h2>Compatible with Your <span class="hl">Existing Equipment</span></h2>
+    </div>
+
+    <div class="hw-grid rv-stagger">
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-card"/></svg></div><div class="hw-name">Android POS Terminals</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-printer"/></svg></div><div class="hw-name">Taffeta Garment Printers</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-tag"/></svg></div><div class="hw-name">Thermal Barcode Scanners</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-pin"/></svg></div><div class="hw-name">RFID Laundry Chips</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-droplet"/></svg></div><div class="hw-name">Wet Cleaning Stations</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-wind"/></svg></div><div class="hw-name">Hydro &amp; Steam Press</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-layers"/></svg></div><div class="hw-name">Leather Care Units</div></div>
+      <div class="hw-card"><div class="hw-icon"><svg class="ic"><use href="#i-box"/></svg></div><div class="hw-name">Automatic Conveyors</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANPOWER ACADEMY -->
+<section id="manpower">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Pressmate Academy</span>
+      <h2>Trained Manpower &amp; <span class="hl">Master Drycleaners</span></h2>
+    </div>
+
+    <div class="manpower-grid rv-stagger">
+      <div class="mp-card">
+        <div class="mp-icon"><svg class="ic"><use href="#i-book"/></svg></div>
+        <h3>Apply as Trainee</h3>
+        <p>Get certified in luxury garment care, stain removal, machine operation, and digital POS workflows through our training academy.</p>
+        <a class="mp-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20enroll%20in%20Pressmate%20Training%20Academy" target="_blank" rel="noopener">Enroll in Academy</a>
+      </div>
+
+      <div class="mp-card">
+        <div class="mp-icon"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h3>Hire Certified Master</h3>
+        <p>Facing skilled operator shortages? Hire background-verified, pre-trained dry cleaning masters and store staff directly.</p>
+        <a class="mp-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20hire%20a%20trained%20dry%20cleaning%20master%20for%20my%20store" target="_blank" rel="noopener">Hire Master</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-final rv">
+      <div>
+        <h2>Ready to upgrade your dry cleaning business?</h2>
+        <p>Book a personalized demo and see how PressmateOS simplifies billing, delivery &amp; branch growth.</p>
+      </div>
+      <a class="demo-btn" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20of%20PressmateOS" target="_blank" rel="noopener">Book Free Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fwrap">
+    <div class="ftop">
+      <div>
+        <!-- Brand in Footer -->
+        <svg class="logo-svg" viewBox="0 0 460 110" xmlns="http://www.w3.org/2000/svg">
+          <text x="5" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#082062" letter-spacing="-1.5">Pressmate</text>
+          <text x="338" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="64" fill="#F45B1E" letter-spacing="-1.5">OS</text>
+          <path d="M 370 18 A 38 38 0 0 1 428 20" fill="none" stroke="#F45B1E" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="431" cy="22" r="5" fill="#F45B1E"/>
+          <path d="M 432 78 A 38 38 0 0 1 372 78" fill="none" stroke="#F45B1E" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="433" cy="74" r="5" fill="#F45B1E"/>
+          <line x1="28" y1="96" x2="72" y2="96" stroke="#F45B1E" stroke-width="3" stroke-linecap="round"/>
+          <text x="84" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#62719a" letter-spacing="0.8">Global Operating System for Fabric Care</text>
+          <line x1="392" y1="96" x2="436" y2="96" stroke="#F45B1E" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <p class="fabout">The all-in-one cloud operating system for modern dry cleaning, laundry and fabric care businesses across India and globally.</p>
+      </div>
+
+      <div class="fcol">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="#features">Customer Mobile App</a></li>
+          <li><a href="#features">Driver Delivery App</a></li>
+          <li><a href="#features">POS &amp; GST Billing</a></li>
+          <li><a href="#hardware">Barcode &amp; RFID Tracking</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#pricing">Pricing Plans</a></li>
+          <li><a href="#manpower">Training Academy</a></li>
+          <li><a href="#contact">Contact Support</a></li>
+        </ul>
+      </div>
+
+      <div class="fcta-box">
+        <p>Need a customized solution?</p>
+        <span>Talk directly to our product specialists on WhatsApp.</span>
+        <a class="demo-btn" style="padding:10px 18px; font-size:0.85rem;" href="#" data-wa-msg="Hi%2C%20I%20want%20to%20talk%20with%20PressmateOS%20team" target="_blank" rel="noopener">Chat on WhatsApp →</a>
+      </div>
+    </div>
+
+    <div class="fbottom">
+      <span>© 2026 PressmateOS. All rights reserved.</span>
+      <span>Successor of <b>Pressmate.in</b></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   ⚙️ CONFIGURATION: SET YOUR WHATSAPP NUMBER HERE
+   ===================================================================== */
+const CONFIG = {
+  // Enter 10/12 digit WhatsApp business number (e.g., '919876543210')
+  whatsappNumber: '9910564111'
+};
+
+function initConfig() {
+  const isSet = CONFIG.whatsappNumber && !/X{4,}/i.test(CONFIG.whatsappNumber);
+  document.querySelectorAll('[data-wa-msg]').forEach(el => {
+    if(isSet) {
+      el.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${el.getAttribute('data-wa-msg')}`;
+    } else {
+      el.href = '#contact';
+    }
+  });
+}
+initConfig();
+
+/* --- Dynamic Features Grid --- */
+const features = [
+  ['i-truck','Delivery Executive App'],['i-smartphone','Customer Mobile App'],['i-card','POS GST Billing'],
+  ['i-file','Digital Invoices & Receipts'],['i-users','CRM & Customer Loyalty'],['i-tag','Barcode & QR Tracking'],
+  ['i-pin','RFID Garment Identification'],['i-bell','WhatsApp Delivery Alerts'],['i-gift','Packages & Subscriptions'],
+  ['i-dollar','Customer Wallet & UPI'],['i-truck','Auto Driver Route Planning'],['i-box','Chemical & Hanger Inventory'],
+  ['i-bar','Multi-Branch Analytics'],['i-layout','Franchise Admin Panel'],['i-cloud','Real-Time Cloud Sync']
+];
+const grid = document.getElementById('featureGrid');
+features.forEach(([icon, label]) => {
+  const el = document.createElement('div');
+  el.className = 'fitem';
+  el.innerHTML = `<div class="ficon"><svg class="ic"><use href="#${icon}"/></svg></div><div class="flabel">${label}</div>`;
+  grid.appendChild(el);
+});
+
+/* --- Live Sidebar Ticker --- */
+const tickerItems = [
+  ['APP-01','Customer App','#F45B1E'],
+  ['POS-02','GST Billing','#22C55E'],
+  ['DRV-03','Delivery Fleet','#38BDF8'],
+  ['TAG-04','RFID Tracking','#F45B1E'],
+  ['INV-05','Stock Control','#A855F7']
+];
+const tkTrack = document.getElementById('tkTrack');
+function renderTicker() {
+  const frag = document.createDocumentFragment();
+  tickerItems.forEach(([code,title,color]) => {
+    const card = document.createElement('div');
+    card.className = 'tk-card';
+    card.innerHTML = `<div class="tk-top"><span class="tk-dot" style="background:${color}"></span><span class="tk-code">${code}</span></div>
+      <div class="tk-title">${title}</div><div class="tk-barcode"></div>`;
+    frag.appendChild(card);
+  });
+  return frag;
+}
+if(tkTrack) {
+  tkTrack.appendChild(renderTicker());
+  tkTrack.appendChild(renderTicker());
+}
+
+/* --- Scroll Animations --- */
+const revealTargets = document.querySelectorAll('.rv, .rv-stagger');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealTargets.forEach(el => revealObserver.observe(el));
+
+/* --- Mobile Menu --- */
+const hamburger = document.getElementById('hamburger');
+const mnav = document.getElementById('mnav');
+if(hamburger && mnav) {
+  hamburger.addEventListener('click', () => {
+    const open = mnav.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+  });
+  mnav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mnav.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+  });
+}
+</script>
+</body>
+</html>
